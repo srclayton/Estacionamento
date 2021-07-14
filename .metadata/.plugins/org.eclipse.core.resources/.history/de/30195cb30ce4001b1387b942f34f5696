@@ -46,7 +46,11 @@ public class Janela extends JFrame implements MouseListener{
 	
 	private static JPanel menu;
 	private static JPanel cadastroVeiculo;
-
+//	********************************************************
+//	criação da janelo do nosso jogo, é o primeiro contato 
+//	que o usuario tem com o jogo, onde ja se inicializa
+//	o menu de opções.
+//	********************************************************
 	public Janela() {
 		criaMenu();
 		updateTela();		
@@ -60,6 +64,10 @@ public class Janela extends JFrame implements MouseListener{
 		return larguraJanela;
 	}
 
+//	*****************************************************
+//	metodo que cria o Painel de menu, onde o usuario tem 
+//	as escolhas de fase e exibir o ranking. 
+//	*****************************************************
 	public void criaMenu() {
 		menu =  new JPanel();
 		menu.setLayout(null);
@@ -77,7 +85,9 @@ public class Janela extends JFrame implements MouseListener{
 		menu.add(bt2);
 		menu.add(bt3);
 		add(menu);
-		updateTela();			
+		updateTela();
+		
+		
 	}
 
 	public void encerraMenu() {
@@ -110,6 +120,7 @@ public class Janela extends JFrame implements MouseListener{
 		cadastroVeiculo = new JPanel();
 		cadastroVeiculo.setLayout(null);
 
+		
 		cadastroVeiculo.add(lbNome);
 		cadastroVeiculo.add(lbCpf);
 		cadastroVeiculo.add(tfNome);
