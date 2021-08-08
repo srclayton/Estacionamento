@@ -14,6 +14,7 @@ public class Veiculo {
 		public String toString() {
 			return str;
 		}
+		
 	}
 	private String modelo;
 	private String placa;
