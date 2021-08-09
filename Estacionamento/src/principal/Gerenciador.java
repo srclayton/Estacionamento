@@ -6,10 +6,9 @@ import java.util.List;
 import principal.Veiculo.Tamanho;
 
 public class Gerenciador {
-	Estacionamento estacionamento;
-	Conexao conexao;
-	List<Ocupacao> listaOcupacao = new ArrayList<>();
-	
+	private Estacionamento estacionamento;
+	private Conexao conexao;
+	private List<Ocupacao> listaOcupacao = new ArrayList<>();
 	private final static int PORTA_CONEXAO = 2565;
 	
 	public Gerenciador() {

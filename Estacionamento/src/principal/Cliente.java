@@ -5,6 +5,7 @@ public class Cliente {
 	private String cpf;
 	private String email;
 	private String telefone;
+	private Veiculo veiculo;
 	
 	public Cliente(String nome, String cpf, String email, String telefone) {
 		this.nome = nome;
@@ -16,13 +17,24 @@ public class Cliente {
 	public String getNome() {
 		return nome;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public String getCpf() {
 		return cpf;
 	}
+	
 	public String getTelefone() {
 		return telefone;
+	}
+	
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+	
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
 	}
 }

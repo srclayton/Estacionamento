@@ -7,19 +7,17 @@ import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
 public class Conexao{
-	DB baseDados;
-	MongoClient mongoClient;
-	DBCollection colecao;
-	BasicDBObject documento = new BasicDBObject();
-	
-	
+	private DB baseDados;
+	private MongoClient mongoClient;
+	private DBCollection colecao;
+	private BasicDBObject documento = new BasicDBObject();
 	
 	@SuppressWarnings("deprecation")
 	public Conexao(int porta)
 	{
 		try
 		{
-			mongoClient = new MongoClient("mongodb://localhost:27017"); 
+			mongoClient = new MongoClient("mongodb://localhost:27017");
 			baseDados = mongoClient.getDB("BaseEstacionamento");
 			colecao = baseDados.getCollection("ColecaoEstacionamento");
 		} 

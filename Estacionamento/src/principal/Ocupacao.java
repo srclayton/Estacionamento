@@ -5,11 +5,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Ocupacao {
-	Date dataInicio;
-	float valorDiaria;
-	Cliente cliente;
-	Veiculo veiculo;
-	Date agendamentoLavaRapido = null;
+	private Date dataInicio;
+	private float valorDiaria;
+	private Cliente cliente;
+	private Veiculo veiculo;
+	private Date agendamentoLavaRapido = null;
 	
 	Ocupacao(Cliente cliente, Veiculo veiculo, float valorDiaria) {
 		this.cliente = cliente;

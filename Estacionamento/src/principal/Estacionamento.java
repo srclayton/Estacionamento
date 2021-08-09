@@ -8,11 +8,15 @@ import java.util.Map;
 import principal.Veiculo.Tamanho;
 
 public class Estacionamento {
-	Map<String, Cliente> mapaClientes = new HashMap<>(); //mapa cpf -> cliente
-	List<Vaga> listaVagas = new ArrayList<>();
-	List<Vaga> vagasOcupadas = new ArrayList<>();
-	Map<String, Veiculo> mapaVeiculos = new HashMap<>();
-	List<Ocupacao> listaOcupacao = new ArrayList<>();
+	private Map<String, Cliente> mapaClientes = new HashMap<>(); //mapa cpf -> cliente
+	private List<Vaga> listaVagas = new ArrayList<>();
+	private List<Vaga> vagasOcupadas = new ArrayList<>();
+	private Map<String, Veiculo> mapaVeiculos = new HashMap<>();
+	private List<Ocupacao> listaOcupacao = new ArrayList<>();
+	
+	public Estacionamento() {
+		
+	}
 	
 	public Veiculo cadastraNovoVeiculo(String modelo, String placa, String cor, Tamanho tamanho, String avarias) {
 		Veiculo v = new Veiculo(modelo, placa, cor, tamanho, avarias);
