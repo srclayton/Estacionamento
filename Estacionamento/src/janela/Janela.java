@@ -31,9 +31,9 @@ public class Janela extends JFrame implements MouseListener{
 	private JButton btProcuraCliente = new JButton("Procurar Cliente");
 	private JButton btProcuraVeiculo = new JButton("Procurar Veiculo");
 	
-	private JLabel labelMenu = new JLabel("MENU");
-	private JLabel labelDadosPessoais = new JLabel("DADOS PESSOAIS");
-	private JLabel labelDadosVeiculo = new JLabel("DADOS DO VEICULO");
+	private JLabel labelMenu = new JLabel("Menu");
+	private JLabel labelDadosPessoais = new JLabel("Dados pessoas");
+	private JLabel labelDadosVeiculo = new JLabel("Dados do veículo");
 	private JLabel lbNome = new JLabel("Digite o Nome:");
 	private JLabel lbCpf = new JLabel("Digite o CPF:");
 	private JLabel lbEmail = new JLabel("Email:");

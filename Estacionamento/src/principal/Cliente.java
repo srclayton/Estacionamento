@@ -6,6 +6,7 @@ public class Cliente {
 	private String email;
 	private String telefone;
 	private Veiculo veiculo;
+        private Vaga vaga = null;
 	
 	public Cliente(String nome, String cpf, String email, String telefone) {
 		this.nome = nome;
@@ -37,4 +38,8 @@ public class Cliente {
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
+        
+        public void setVaga(Vaga vaga) {
+            this.vaga = vaga;
+        }
 }
