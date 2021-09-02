@@ -17,6 +17,8 @@ public class JanelaOrcamento extends javax.swing.JFrame {
      */
     public JanelaOrcamento() {
         initComponents();
+        this.setSize(1280, 720);
+        this.setVisible(true);
     }
 
     /**
@@ -53,7 +55,7 @@ public class JanelaOrcamento extends javax.swing.JFrame {
 
         jLabel3.setText("Data de entrada:");
 
-        jLabel4.setText("Data de saÃ­da:");
+        jLabel4.setText("Data de saída:");
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,20 +65,20 @@ public class JanelaOrcamento extends javax.swing.JFrame {
 
         jButton1.setText("Voltar");
 
-        jButton2.setText("Solicitar orÃ§amento");
+        jButton2.setText("Solicitar orçaamento");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Tamanho do veÃ­culo");
+        jLabel5.setText("Tamanho do veículo");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequeno", "Medio", "Grande" }));
 
-        jLabel2.setText("SolicitaÃ§Ã£o de orÃ§amento");
+        jLabel2.setText("Solicitação de orçamento");
 
-        jMenu1.setText("ConfiguraÃ§Ãµes");
+        jMenu1.setText("Configurações");
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ajuda");

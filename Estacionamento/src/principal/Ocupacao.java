@@ -32,10 +32,10 @@ public class Ocupacao {
 	
     /**
      * 
-     * @param dataFim: representa a data do fim da estadia, para o orçamento.
+     * @param dataFim: representa a data do fim da estadia, para o oramento.
      * @param valorDiaria
      * 
-     * @return valor total do orçamento
+     * @return valor total do oramento
      */
 	public static float getValor(Date dataFim, float valorDiaria) {
 		return contaDias(new Date(), dataFim) * valorDiaria;
@@ -47,6 +47,18 @@ public class Ocupacao {
 	
 	public Date getAgendamentoLavaRapido() {
 		return agendamentoLavaRapido;
+	}
+	
+	public Cliente getCliente() {
+		return this.cliente;
+	}
+	
+	public Veiculo getVeiculo() {
+		return this.veiculo;
+	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
 }

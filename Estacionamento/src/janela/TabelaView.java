@@ -9,77 +9,90 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import principal.Cliente;
+import principal.Vaga;
 
 /**
  *
  * @author Lucas-PC
  */
+@SuppressWarnings("serial")
 public class TabelaView extends AbstractTableModel {
-    private List<Cliente> clientes;
+    private List<Vaga> vagas;
 
     public TabelaView() {
-        clientes = new ArrayList<>();
+    	vagas = new ArrayList<>();
     }
 
-    public TabelaView(List<Cliente> clientes) {
-        this.clientes = clientes;
+    public TabelaView(List<Vaga> vagas) {
+        this.vagas = vagas;
     }
 
     @Override
     public int getRowCount() {
-        return clientes.size();
+        return vagas.size();
     }
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 6;
     }
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-        return String.class;
-        /*switch (columnIndex) {
+        switch (columnIndex) {
             case 0: return String.class;
-            case 1: 
-            case 2: 
-            case 3: return Double.class;
+            case 1: return String.class;
+            case 2: return String.class;
+            case 3: return String.class;
+            case 4: return String.class;
+            case 5: return float.class;
         }
-        return Object.class;*/
+        return Object.class;
     }
 
     @Override
     public String getColumnName(int column) {
         switch (column) {
             case 0: return "Vaga";
-            case 1: return "Nome Cliente";
-            case 2: return "Carro";
-            case 3: return "Status";
+            case 1: return "Status";
+            case 2: return "Nome Cliente";
+            case 3: return "Cpf Cliente";
+            case 4: return "Placa carro";
+            case 5: return "Valor";
         }
         return null;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Cliente cliente = clientes.get(rowIndex);
+        Vaga vaga = vagas.get(rowIndex);
         switch (columnIndex) {
-            case 0: return cliente.getNome();
-            case 1: return cliente.getVeiculo().getModelo();
-            case 2: return cliente.getVeiculo().getPlaca();
-            case 3: return cliente.getCpf();
+            case 0: 
+            	return vaga.getLocalizacao();
+            case 1:
+            	return vaga.getOcupacao() != null ? "Ocupada" : "Vazia";
+            case 2: 
+            	return vaga.getOcupacao() != null ? vaga.getOcupacao().getCliente().getNome() : "";
+            case 3:
+            	return vaga.getOcupacao() != null ? vaga.getOcupacao().getCliente().getCpf() : "";
+            case 4: 
+            	return vaga.getOcupacao() != null ? vaga.getOcupacao().getVeiculo().getPlaca() : "";
+            case 5:
+            	return vaga.getOcupacao() != null ? vaga.getOcupacao().getValorAtual() : "";
         }
         return null;
     }
 
-    public void add(Cliente cliente) {
-        clientes.add(cliente);
-        int row = clientes.indexOf(cliente);
+    public void add(Vaga vaga) {
+    	vagas.add(vaga);
+        int row = vagas.indexOf(vaga);
         fireTableRowsInserted(row, row);
     }
 
-    public void remove(Cliente cliente) {
-        if (clientes.contains(cliente)) {
-            int row = clientes.indexOf(cliente);
-            clientes.remove(row);
+    public void remove(Vaga vaga) {
+        if (vagas.contains(vaga)) {
+            int row = vagas.indexOf(vaga);
+            vagas.remove(row);
             fireTableRowsDeleted(row, row);
         }
     }

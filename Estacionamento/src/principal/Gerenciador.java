@@ -22,14 +22,10 @@ public class Gerenciador {
 	
 	public Gerenciador() {
 		estacionamento = new Estacionamento();
-		//recuperaBancoDeDados();
+		recuperaBancoDeDados();
 	}
-	
+
 	public void recuperaBancoDeDados() {
-		
-		
-		
-		//Conexao.getInstance().testando();
 		String dbData = Conexao.getInstance().getDatabaseJsonAsString();
 		this.estacionamento = GSON.fromJson(dbData, Estacionamento.class);
 	}
@@ -62,10 +58,26 @@ public class Gerenciador {
 		return estacionamento.cadastraNovoCliente(nome, cpf, email, telefone);
 	}
 	
+	public Cliente cadastraNovoCliente(String nome, String cpf, String email, String telefone, Veiculo veiculo) {
+		return estacionamento.cadastraNovoCliente(nome, cpf, email, telefone);
+	}
+	
+	public Cliente cadastraNovoCliente(Cliente c, Veiculo v) {
+		return null;
+	}
+	
 	public void novaOcupacao(Cliente cliente, Veiculo veiculo) {
-		float valorDiaria = (float) 20.0;//????
+		this.novaOcupacao(cliente, veiculo, this.estacionamento.getVagaLivre());
+	}
+	
+	public void novaOcupacao(Cliente cliente, Veiculo veiculo, Vaga vaga) {
+		float valorDiaria = (float) 20.0;
 		Ocupacao ocupacao = new Ocupacao(cliente, veiculo, valorDiaria);
+		vaga.setOcupacao(ocupacao);
+		estacionamento.adicionaCliente(cliente);
 		estacionamento.adicionaOcupacao(ocupacao);
+		estacionamento.adicionaVaga(vaga);
+		estacionamento.adicionaVagaOcupada(vaga);
 	}
 
 	public Cliente getCliente(String cpf) {

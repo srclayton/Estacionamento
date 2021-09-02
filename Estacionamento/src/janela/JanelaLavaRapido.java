@@ -16,6 +16,8 @@ public class JanelaLavaRapido extends javax.swing.JFrame {
      */
     public JanelaLavaRapido() {
         initComponents();
+        this.setSize(1280, 720);
+        this.setVisible(true);
     }
 
     /**
@@ -57,18 +59,18 @@ public class JanelaLavaRapido extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Agendar prÃ³ximo horÃ¡rio");
+        jButton3.setText("Agendar próximo horário");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jRadioButton1.setText("RÃ¡pida");
+        jRadioButton1.setText("Rápida");
 
         jCheckBox1.setText("Pretinho no pneu");
 
-        jLabel2.setText("PreÃ§o total R$");
+        jLabel2.setText("Preço total R$");
 
         jCheckBox2.setText("Polimento com cera");
 
@@ -81,19 +83,19 @@ public class JanelaLavaRapido extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Lavagem bÃ¡sica com lavadora de alta pressÃ£o");
+        jLabel4.setText("Lavagem básica com lavadora de alta pressão");
 
         jLabel5.setText("Inclui limpeza interna");
 
         jLabel6.setText("Inclui lavagem do motor e assoalho");
 
-        jLabel7.setText("ServiÃ§o de lava-rÃ¡pido");
+        jLabel7.setText("Serviço de lava-rápido");
 
-        jLabel8.setText("ServiÃ§os adicionais");
+        jLabel8.setText("Serviços adicionais");
 
-        jCheckBox3.setText("HidrataÃ§Ã£o dos plÃ¡sticos");
+        jCheckBox3.setText("Hidratação dos plásticos");
 
-        jMenu1.setText("ConfiguraÃ§Ãµes");
+        jMenu1.setText("Configurações");
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ajuda");
@@ -200,41 +202,6 @@ public class JanelaLavaRapido extends javax.swing.JFrame {
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JanelaLavaRapido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JanelaLavaRapido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JanelaLavaRapido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JanelaLavaRapido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JanelaLavaRapido().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

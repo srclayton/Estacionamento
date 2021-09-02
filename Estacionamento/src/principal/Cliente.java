@@ -6,7 +6,7 @@ public class Cliente {
 	private String email;
 	private String telefone;
 	private Veiculo veiculo;
-        private Vaga vaga = null;
+    private Vaga vaga = null;
 	
 	public Cliente(String nome, String cpf, String email, String telefone) {
 		this.nome = nome;

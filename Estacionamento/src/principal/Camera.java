@@ -2,8 +2,8 @@ package principal;
 
 public class Camera {
 	private Vaga vaga;
-	private String identificador; //id da câmera?
-	private boolean gravando; //só grava quando um veículo for estacionado na vaga
+	private String identificador; //id da camera?
+	private boolean gravando; //so grava quando um veiculo for estacionado na vaga
 
 	public Camera(Vaga vaga, String identificador, boolean gravando) {
 		this.vaga = vaga;

@@ -24,11 +24,11 @@ public class Estacionamento {
 	private Map<String, Veiculo> mapaVeiculos = new HashMap<>();
 	@BsonProperty("listaOcupacao")
 	private List<Ocupacao> listaOcupacao = new ArrayList<>();
-	
-	
-	public Estacionamento() {
 
+	public Estacionamento() {
+		
 	}
+
 	@BsonCreator
 	public Estacionamento(@BsonProperty("mapaClientes") Map<String, Cliente> mapaClientes,
 			@BsonProperty("listaVagas") List<Vaga> listaVagas,
@@ -42,6 +42,12 @@ public class Estacionamento {
 		this.listaOcupacao = listaOcupacao;
 	}
 	
+	public Map<String, Cliente> getMapaClientes() {
+		return mapaClientes;
+	}
+	public void setMapaClientes(Map<String, Cliente> mapaClientes) {
+		this.mapaClientes = mapaClientes;
+	}
 	public Veiculo cadastraNovoVeiculo(String modelo, String placa, String cor, Tamanho tamanho, String avarias) {
 		Veiculo v = new Veiculo(modelo, placa, cor, tamanho, avarias);
 		mapaVeiculos.put(v.getPlaca(), v);
@@ -53,6 +59,14 @@ public class Estacionamento {
 		mapaClientes.put(c.getCpf(), c);
 		return c;
 	}
+	
+	public Cliente cadastraNovoCliente(String nome, String cpf, String email, String telefone, Veiculo veiculo) {
+		Cliente c = new Cliente(nome, cpf, email, telefone);
+		mapaClientes.put(c.getCpf(), c);
+		return c;
+	}
+	
+	
 
 	public void adicionaCliente(Cliente cliente) {
 		mapaClientes.put(cliente.getCpf(), cliente);
@@ -81,5 +95,22 @@ public class Estacionamento {
 	public List<Ocupacao> getListaOcupacao() {
 		return listaOcupacao;
 	}
+
+	public void adicionaVagaOcupada(Vaga vaga) {
+		this.vagasOcupadas.add(vaga);
+	}
+
+	public Vaga getVagaLivre() {
+		for(Vaga vaga : listaVagas)
+			if(vaga.getOcupacao() != null)
+				return vaga;
+		return null;
+	}
+
+	public void adicionaVaga(Vaga vaga) {
+		this.listaVagas.add(vaga);
+	}
+	
+	
 
 }

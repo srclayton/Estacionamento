@@ -1,9 +1,13 @@
 package principal;
 
-public abstract class Vaga {
+public class Vaga {
 	private String localizacao;
 	private Camera camera;
 	private Ocupacao ocupacao = null;
+	
+	public Vaga(String localizacao) {
+		this.localizacao = localizacao;
+	}
 
 	public String getLocalizacao() {
 		return localizacao;
@@ -19,6 +23,14 @@ public abstract class Vaga {
 	
 	public void setCamera(Camera camera) {
 		this.camera = camera;
+	}
+	
+	public Ocupacao getOcupacao() {
+		return ocupacao;
+	}
+	
+	public void setOcupacao(Ocupacao ocupacao) {
+		this.ocupacao = ocupacao;
 	}
 	
 }
